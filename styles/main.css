@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+        /* Contenedor del header con el canvas */
+#game-of-life-header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #0f172a;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Canvas se posiciona detrás del contenido */
+#game-of-life-header canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding-top: 80px; /* Añade espacio para el navbar */
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+.header-content p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #e2e8f0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header-badge {
+    display: inline-block;
+    background: rgba(147, 51, 234, 0.85);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    align-self: center;
+}
+
+/* Contenido principal de la página */
+.main-content {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    color: #1e293b;
+    border-bottom: 3px solid #5235a1;
+    padding-bottom: 0.7rem;
+    margin: 1.5rem 0;
+}
+
+.color-palette {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.color-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Instrucciones */
+.instructions {
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+}
+.instructions h3 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+}
+
+        /* Estilos para el Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3c0035;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(200, 144, 252, 0.521);
+    color: #ffffff;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background-color: #3c0035;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+
+/* Estilos del Footer */
+.footer {
+    background-color: #330036;
+    color: #e2e8f0;
+    padding-top: 3rem;
+    margin-top: 4rem;
+    /* border-top: 3px solid #10b981; */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section {
+    margin-bottom: 1.5rem;
+}
+
+.footer-title {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #7d28bb;
+    display: inline-block;
+}
+
+.footer-motto {
+    font-style: italic;
+    color: #cb90c9;
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-list li strong {
+    min-width: 80px;
+    color: #cbd5e1;
+}
+
+.footer-list a {
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 0.2rem 0;
+    display: inline-block;
+}
+
+.footer-list a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
+/* Redes sociales */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.social-link:hover {
+    transform: translateX(5px);
+    text-decoration: none;
+}
+
+.social-icon {
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.2);
+}
+
+/* Colores específicos para cada red social */
+.facebook {
+    background-color: rgba(59, 89, 152, 0.2);
+    border-left: 4px solid #3b5998;
+}
+
+.facebook:hover {
+    background-color: rgba(59, 89, 152, 0.3);
+}
+
+.twitter {
+    background-color: rgba(29, 161, 242, 0.2);
+    border-left: 4px solid #1da1f2;
+}
+
+.twitter:hover {
+    background-color: rgba(29, 161, 242, 0.3);
+}
+
+.instagram {
+    background-color: rgba(225, 48, 108, 0.2);
+    border-left: 4px solid #e1306c;
+}
+
+.instagram:hover {
+    background-color: rgba(225, 48, 108, 0.3);
+}
+
+.github {
+    background-color: rgba(24, 23, 23, 0.2);
+    border-left: 4px solid #181717;
+}
+
+.github:hover {
+    background-color: rgba(24, 23, 23, 0.3);
+}
+
+.youtube {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-left: 4px solid #ff0000;
+}
+
+.youtube:hover {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Sección inferior del footer */
+.footer-bottom {
+    background-color: #1f0120;
+    padding: 1rem 0;
+    border-top: 1px solid #7d28bb;
+}
+
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-disclaimer {
+    color: #64748b;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer {
+        padding-top: 2rem;
+    }
+    
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .social-link {
+        flex: 1;
+        min-width: 150px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-link {
+        min-width: 100%;
+    }
+}
+
+.logo-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.logo-img {
+    width: 12rem;
+    /* height: 150px; */
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: rgba(240, 240, 240, 0.514);
+    padding: 10px;
+    box-shadow: 13px 9px 25px rgba(0, 0, 0, 0.3);
+    /* border: 4px solid rgba(255, 255, 255, 0.2); */
+    animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+
+/* Estilos para el logo en el navbar */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: opacity 0.3s;
+}
+
+.nav-logo:hover {
+    opacity: 0.9;
+}
+
+.navbar-logo-img {
+    width: 5rem;
+    /* height: 40px; */
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.582);
+    padding: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-logo-text {
+    display: none; /* Oculto en móviles por defecto */
+}
+
+/* Mostrar texto del logo en pantallas más grandes */
+@media (min-width: 769px) {
+    .navbar-logo-img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .nav-logo-text {
+        display: inline;
+    }
+}
+
+/* Ajuste para el header cuando hay navbar con logo */
+.header-content {
+    padding-top: 85px; /* Aumenta este valor si el navbar es más alto */
+}
+
+        /* Imagen del cartel */
+        .poster-container {
+            padding: 30px;
+            text-align: center;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .poster-image {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #cbd5e1;
+        }
+        
