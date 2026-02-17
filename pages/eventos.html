@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <!-- <link rel="stylesheet" href="css/navbar.css"> -->
+        <link rel="icon" href="../assets/images/NUKUlogo.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../assets/images/NUKUlogo.png" alt="Logo NUKU" class="navbar-logo-img">
+                <span class="nav-logo-text">NUKU</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/smaa.html">SMAA</a></li>
+                <li><a href="../pages/talleres.html" class="active">Talleres</a></li>
+                <li><a href="../pages/eventos.html">Eventos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Header de la página -->
+    <header class="page-header">
+        <h1>Eventos NUKU</h1>
+        <p>Conferencias, coloquios, seminarios especiales y actividades académicas del capítulo estudiantil</p>
+    </header>
+
+    <main class="events-container">
+        <!-- Filtros -->
+        <!-- <div class="event-filters">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Conferencias</button>
+            <button class="filter-btn">Seminarios</button>
+            <button class="filter-btn">Talleres</button>
+            <button class="filter-btn">Culturales</button>
+        </div> -->
+        <div class="event-poster">
+            <img src="../assets/images/Diana-uam.jpeg" alt="Cartel promocional del evento" class="event-poster-img">
+        </div>
+        <!-- Evento destacado -->
+        <!-- <div class="featured-event">
+            <div class="featured-content">
+                <span class="featured-badge">🌟 EVENTO DESTACADO</span>
+                <h2>Coloquio de Matemáticas Aplicadas 2026</h2>
+                <div class="featured-meta">
+                    <span>📅 15-17 marzo 2026</span>
+                    <span>📍 Auditorio FES Aragón</span>
+                    <span>👥 200 asistentes</span>
+                </div>
+                <p class="featured-description">
+                    El evento más importante del semestre reúne a investigadores nacionales e internacionales 
+                    para discutir los avances en matemáticas aplicadas, modelado computacional y educación matemática.
+                </p>
+                <a href="#" class="featured-button">Ver programa completo →</a>
+            </div>
+            <div class="featured-image">
+                🎯
+            </div>
+        </div>
+
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">
+                    <span>🧮</span>
+                    <div class="event-date-badge">Próximamente</div>
+                </div>
+                <div class="event-content">
+                    <span class="event-category">Conferencia</span>
+                    <h3 class="event-title">Geometría Tropical y Aplicaciones</h3>
+                    <div class="event-meta">
+                        <span>📅 28 feb 2026</span>
+                        <span>⏰ 16:00 hrs</span>
+                    </div>
+                    <p class="event-description">
+                        Dr. Miguel Ángel Hernández - Una introducción a la geometría tropical 
+                        y sus aplicaciones en problemas de optimización.
+                    </p>
+                    <div class="event-footer">
+                        <span class="event-price free">Gratuito</span>
+                        <a href="#" class="event-link">Registro</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image">
+                    <span>📊</span>
+                    <div class="event-date-badge">¡Hoy!</div>
+                </div>
+                <div class="event-content">
+                    <span class="event-category">Taller</span>
+                    <h3 class="event-title">Python para Matemáticas</h3>
+                    <div class="event-meta">
+                        <span>📅 17 feb 2026</span>
+                        <span>⏰ 10:00 hrs</span>
+                    </div>
+                    <p class="event-description">
+                        Taller introductorio a Python con enfoque en cálculo simbólico, 
+                        gráficas y resolución de problemas matemáticos.
+                    </p>
+                    <div class="event-footer">
+                        <span class="event-price">$50</span>
+                        <a href="#" class="event-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image">
+                    <span>🎲</span>
+                    <div class="event-date-badge">Nuevo</div>
+                </div>
+                <div class="event-content">
+                    <span class="event-category">Seminario</span>
+                    <h3 class="event-title">Teoría de Juegos y Economía</h3>
+                    <div class="event-meta">
+                        <span>📅 5 mar 2026</span>
+                        <span>⏰ 12:00 hrs</span>
+                    </div>
+                    <p class="event-description">
+                        Ciclo de conferencias sobre teoría de juegos, equilibrio de Nash 
+                        y aplicaciones en economía comportamental.
+                    </p>
+                    <div class="event-footer">
+                        <span class="event-price free">Gratuito</span>
+                        <a href="#" class="event-link">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="calendar-section">
+            <div class="calendar-header">
+                <h2>Calendario de Eventos - Febrero 2026</h2>
+                <div class="calendar-nav">
+                    <button>←</button>
+                    <button>→</button>
+                </div>
+            </div>
+            
+            <div class="calendar-grid">
+                <div class="calendar-day-header">Lun</div>
+                <div class="calendar-day-header">Mar</div>
+                <div class="calendar-day-header">Mié</div>
+                <div class="calendar-day-header">Jue</div>
+                <div class="calendar-day-header">Vie</div>
+                <div class="calendar-day-header">Sáb</div>
+                <div class="calendar-day-header">Dom</div>
+                
+                
+                <div class="calendar-day"><span class="calendar-day-number">1</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">2</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">3</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">4</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">5</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">6</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">7</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">8</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">9</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">10</span></div>
+                <div class="calendar-day has-event">
+                    <span class="calendar-day-number">11</span>
+                    <span class="event-dot"></span>
+                </div>
+                <div class="calendar-day"><span class="calendar-day-number">12</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">13</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">14</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">15</span></div>
+                <div class="calendar-day has-event">
+                    <span class="calendar-day-number">16</span>
+                    <span class="event-dot"></span>
+                </div>
+                <div class="calendar-day has-event">
+                    <span class="calendar-day-number">17</span>
+                    <span class="event-dot"></span>
+                </div>
+                <div class="calendar-day"><span class="calendar-day-number">18</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">19</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">20</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">21</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">22</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">23</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">24</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">25</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">26</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">27</span></div>
+                <div class="calendar-day"><span class="calendar-day-number">28</span></div>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 8px;">
+                <p style="color: #475569;">✨ Los puntos morados indican días con eventos programados</p>
+            </div>
+        </section> -->
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer class="footer" id="contacto">
+    <div class="footer-container">
+        <!-- Sección de información institucional -->
+        <div class="footer-section">
+            <h3 class="footer-title">Capítulo Estudiantil NUKU</h3>
+            <p>Proyecto estudiantil de la <strong>Facultad de Estudios Superiores Acatlán (FES-A)</strong>, Universidad Nacional Autónoma de México.</p>
+            <p class="footer-motto">"Todo matemático(a) tiene 3 responsabilidades morales: hacer, difundir y enseñar matemáticas, para ésta última no hay recetas mágicas para hacerlo y no solo con buenas intenciones basta para lograr un buen aprendizaje."</p>
+        </div>
+
+        <!-- Sección de contacto -->
+        <div class="footer-section">
+            <h3 class="footer-title">Contacto</h3>
+            <ul class="footer-list">
+                <li><strong>Ubicación: </strong> FES Acatlán, UNAM</li>
+                <li><strong>Correo: </strong> nukucapituloestudiantil@gmail.com</li>
+                <!-- <li><strong>Horario:</strong> Actividades semanales</li> -->
+            </ul>
+        </div>
+
+        <!-- Sección de redes sociales -->
+        <div class="footer-section">
+            <h3 class="footer-title">Síguenos</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/groups/1540148930861110" target="_blank" class="social-link facebook">
+                    <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                    </svg>
+                    Facebook
+                </a>
+                
+                
+                <a href="https://www.instagram.com/nukucapituloestudiantil/" target="_blank" class="social-link instagram">
+                    <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                    </svg>
+                    Instagram
+                </a>
+                
+                </a> 
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Línea de copyright -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <p>&copy; 2026 Capítulo Estudiantil NUKU - FES Acatlán, UNAM. Todos los derechos reservados.</p>
+            <p class="footer-disclaimer">Esta página es parte del proyecto académico del capítulo estudiantil NUKU.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/navbar.js"></script>
+</body>
+</html>
