@@ -1292,3 +1292,54 @@ body {
         max-height: 40vh;
     }
 }
+
+/* Contenedor para desplazamiento horizontal */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
+
+/* Opcional: mejorar visualización del scroll */
+.table-responsive::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Mantener la tabla con ancho automático */
+.sessions-table {
+    width: 100%;
+    min-width: 600px; /* Ancho mínimo antes de que aparezca scroll */
+    border-collapse: collapse;
+}
+
+/* Opcional: mejorar legibilidad en móvil */
+@media (max-width: 768px) {
+    .sessions-table th,
+    .sessions-table td {
+        padding: 10px 8px;
+        font-size: 14px;
+        white-space: nowrap; /* Evita que el texto se rompa dentro de celdas */
+    }
+    
+    /* Si quieres que algunas columnas sean más flexibles */
+    .sessions-table td:first-child,
+    .sessions-table th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+    }
+}
