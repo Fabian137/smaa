@@ -1330,9 +1330,13 @@ body {
 @media (max-width: 768px) {
     .sessions-table th,
     .sessions-table td {
-        padding: 10px 8px;
+        /* padding: 10px 8px; */
         font-size: 14px;
-        white-space: nowrap; /* Evita que el texto se rompa dentro de celdas */
+        white-space: wrap; /* Evita que el texto se rompa dentro de celdas */
+    }
+    .sessions-table {
+        width: max-content;
+        min-width: 100%;
     }
     
     /* Si quieres que algunas columnas sean más flexibles */
