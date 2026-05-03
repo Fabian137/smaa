@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos</title>
-    <link rel="stylesheet" href="../styles/main.css">
     <!-- <link rel="stylesheet" href="css/navbar.css"> -->
-        <link rel="icon" href="../assets/images/NUKUlogo.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/images/NUKUlogo.svg" type="image/svg+xml">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar nukus-navbar"> 
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">
                 <img src="../assets/images/NUKUlogo.svg" alt="Logo NUKU" class="navbar-logo-img">
@@ -47,8 +49,36 @@
             <button class="filter-btn">Talleres</button>
             <button class="filter-btn">Culturales</button>
         </div> -->
-        <div class="event-poster">
-            <img src="../assets/images/Diana-uam.jpeg" alt="Cartel promocional del evento" class="event-poster-img">
+    
+        <div class="carousel-container">
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://res.cloudinary.com/duwcgmivc/image/upload/v1777792895/congreso-smm_aciyo4.jpg" class="d-block w-100" alt="Congreso Nacional de Matemáticas 2026">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/duwcgmivc/image/upload/v1777793547/juriquilla_uuoejx.jpg" class="d-block w-100" alt="Juriquilla 2026">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/duwcgmivc/image/upload/v1777793548/oaxaca_iyqdul.jpg" class="d-block w-100" alt="Oaxaca 2026">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/duwcgmivc/image/upload/v1777793548/ccm_pe4f2c.jpg" class="d-block w-100" alt="CCM 2026">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/duwcgmivc/image/upload/v1777793548/inv_vg9opa.jpg" class="d-block w-100" alt="Imate 2026">
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            </div>
         </div>
         <!-- Evento destacado -->
         <!-- <div class="featured-event">
@@ -261,6 +291,7 @@
     </div>
 </footer>
 
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
     <script src="../scripts/main.js"></script>
 </body>
 </html>

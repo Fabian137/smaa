@@ -118,18 +118,19 @@ body {
 }
 
         /* Estilos para el Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+.navbar.nukus-navbar{
+    display: block;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
     background-color: #3c0035;
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.nav-container {
+.nukus-navbar .nav-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -139,19 +140,19 @@ body {
     height: 70px;
 }
 
-.nav-logo {
+.nukus-navbar .nav-logo {
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.nav-menu {
+.nukus-navbar .nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
-.nav-menu a {
+.nukus-navbar .nav-menu a {
     color: #e2e8f0;
     text-decoration: none;
     font-weight: 500;
@@ -165,7 +166,7 @@ body {
     color: #ffffff;
 }
 
-.nav-toggle {
+.nukus-navbar .nav-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -182,7 +183,7 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-menu {
+    .nukus-navbar .nav-menu {
         position: fixed;
         top: 70px;
         left: -100%;
@@ -195,17 +196,17 @@ body {
         gap: 1rem;
     }
 
-    .nav-menu.active {
+    .nukus-navbar .nav-menu.active {
         left: 0;
     }
 
-    .nav-toggle {
+    .nukus-navbar .nav-toggle {
         display: flex;
     }
 }
 
 @media(max-width: 425px){
-    .navbar-logo-img {
+    .nukus-navbar .navbar-logo-img {
         width: 3rem;
         /* height: 45px; */
     }    
@@ -259,7 +260,7 @@ body {
 .footer-list li {
     margin-bottom: 0.8rem;
     display: flex;
-    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .footer-list li strong {
@@ -405,6 +406,32 @@ body {
         flex: 1;
         min-width: 150px;
         justify-content: center;
+    }
+    /* EL CARRUSEL */
+    .carousel, 
+    .carousel-inner, 
+    .carousel-item {
+        height: auto !important;
+        min-height: 300px;
+    }
+    
+    /* Las imágenes del carrusel */
+    .carousel-item img {
+        height: 200px !important;  /* Altura fija más pequeña */
+        object-fit: cover;
+    }
+    
+}
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+        opacity: 0.4;  /* más sutiles */
+    }
+    
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        opacity: 0.8;  /* se ven al tocar */
     }
 }
 
@@ -1172,4 +1199,96 @@ body {
     height: 100%;
     object-fit: cover; /* La imagen se ajusta sin deformarse */
     display: block;
+}
+
+.carousel-container {
+    width: 80%;
+    max-width: 800px;  /* opcional: tamaño máximo */
+    height: 90vh;      /* 80% del alto de la pantalla */
+    margin: 0 auto;    /* centrar */
+}
+
+.carousel-container .carousel,
+.carousel-container .carousel-inner,
+.carousel-container .carousel-item {
+    height: 100%;
+}
+
+.carousel-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* hace que todas las imágenes se vean iguales sin deformarse */
+}
+/* Cambiar fondo del botón completo */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.123);
+    width: 8%;
+    border-radius: 5px;
+}
+
+/* Hover (al pasar el mouse) */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(216, 216, 216, 0.164);  /* color naranja */
+}
+
+/* Forzar que esos textos se vean bien */
+.talleres-lista, .info-taller {
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden; /* Evita scroll horizontal */
+    }
+    
+    .main, .container, /* tus contenedores principales */
+    .eventos-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Texto más pequeño y fluido */
+    h1 {
+        font-size: 1.8rem;
+        word-wrap: break-word;
+    }
+    
+    h2, h3 {
+        font-size: 1.3rem;
+    }
+    
+    p, li, .descripcion {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+    }
+    
+    /* Fechas y eventos */
+    .fecha-evento, .lugar-evento {
+        display: block;
+        padding: 8px 0;
+    }
+    
+    /* URLs largas */
+    a {
+        word-break: break-all; /* Rompe URLs largas */
+    }
+    
+    /* Corrige el carrusel si lo tienes */
+    .carousel, .carousel-container {
+        height: auto;
+        min-height: 40vh;
+    }
+    
+    .carousel-container img {
+        height: auto;
+        max-height: 40vh;
+    }
 }
