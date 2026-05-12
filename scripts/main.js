@@ -172,3 +172,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    
+    let currentIndex = 0;
+    const totalItems = items.length;
+    
+    function updateCarousel(index) {
+        // Actualizar items
+        items.forEach(item => item.classList.remove('active'));
+        items[index].classList.add('active');
+        
+        // Actualizar dots
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+        
+        currentIndex = index;
+    }
+    
+    function nextSlide() {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= totalItems) newIndex = 0;
+        updateCarousel(newIndex);
+    }
+    
+    function prevSlide() {
+        let newIndex = currentIndex - 1;
+        if (newIndex < 0) newIndex = totalItems - 1;
+        updateCarousel(newIndex);
+    }
+    
+    // Eventos botones
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Eventos dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => updateCarousel(index));
+    });
+    
+    // Auto reproducción (opcional)
+    let autoPlay = setInterval(nextSlide, 5000);
+    
+    // Pausar auto reproducción al pasar el mouse
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    carousel.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(nextSlide, 5000);
+    });
+    
+    // Soporte para swipe en móvil
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX - 50) nextSlide();
+        if (touchEndX > touchStartX + 50) prevSlide();
+    });
+});
