@@ -19,8 +19,7 @@
             <ul class="nav-menu">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../pages/smaa.html">SMAA</a></li>
-                <li><a href="../pages/talleres.html" class="active">Talleres</a></li>
-                <li><a href="../pages/eventos.html">Eventos</a></li>
+                <li><a href="../pages/talleres.html" class="active">Talleres y eventos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             
@@ -36,7 +35,15 @@
     <header class="page-header" style="height: 80vh; margin: 0;">
         <h1>Talleres NUKU</h1>
         <p>Próximamente</p>
+    
+        <div class="container">
+            <!-- <iframe class="formss" src="https://calendar.google.com/calendar/embed?src=423127045%40pcpuma.acatlan.unam.mx&ctz=America%2FMexico_City" style="border: 0" frameborder="0" scrolling="no"></iframe> -->
+             <!-- Esto debería existir -->
+            <div id="calendario-container"></div>
+        </div>
     </header>
+    
+    
     <!-- <main class="workshops-container">
         
         <div class="event-poster">
@@ -47,20 +54,21 @@
         </div>
     </main> 
     -->
-    <!-- <main class="workshops-container"> -->
+    <!-- <main class="workshops-container">  -->
         <!-- Categorías -->
-        <!-- <div class="categories-grid">
-            <span class="category-chip active">Todos</span>
-            <span class="category-chip">Matemáticas</span>
-            <span class="category-chip">Programación</span>
-            <span class="category-chip">Estadística</span>
-            <span class="category-chip">Divulgación</span>
-        </div> -->
+         <!-- <div class="categories-grid">
+             <span class="category-chip active">Todos</span>
+             <span class="category-chip">Matemáticas</span>
+             <span class="category-chip">Programación</span>
+             <span class="category-chip">Estadística</span>
+             <span class="category-chip">Divulgación</span>
+            </div>
+            -->
 
         <!-- Taller destacado -->
-        <!-- <div class="featured-workshop">
-            <div class="featured-info">
-                <span class="featured-badge">🔥 TALLER DEL MES</span>
+         <!-- <div class="featured-workshop"> 
+             <div class="featured-info">
+                 <span class="featured-badge">🔥 TALLER DEL MES</span>
                 <h2>Introducción al Machine Learning con Python</h2>
                 <p style="color: #475569; margin-bottom: 20px;">
                     Aprende los fundamentos del aprendizaje automático desde cero. 
@@ -96,140 +104,17 @@
             <div class="featured-image">
                 🤖
             </div>
-        </div> -->
-
+        -->
+        <!-- </div> -->
+        
         <!-- Grid de talleres -->
-        <!-- <h2 style="font-size: 2rem; color: #330036; margin: 40px 0 20px;">Todos los talleres</h2> -->
+         <!-- <h2 style="font-size: 2rem; color: #330036; margin: 40px 0 20px;">Todos los talleres</h2>  -->
         
-        <!-- <div class="workshops-grid"> -->
-            <!-- Taller 1 -->
-            <!-- <div class="workshop-card"> -->
-                <!-- <div class="workshop-image">
-                    <span>📐</span>
-                    <div class="workshop-level">Intermedio</div>
-                </div>
-                <div class="workshop-content">
-                    <span class="workshop-category">Matemáticas</span>
-                    <h3 class="workshop-title">Geometría Diferencial para Físicos</h3>
-                    <div class="workshop-instructor">
-                        <div class="instructor-avatar">DR</div>
-                        <span>Dr. Daniel Ramírez</span>
-                    </div>
-                    
-                    <div class="workshop-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Inicio</span>
-                            <span class="meta-value">10 marzo</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Duración</span>
-                            <span class="meta-value">6 semanas</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Horario</span>
-                            <span class="meta-value">Mar 14-16</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Cupo</span>
-                            <span class="meta-value">25</span>
-                        </div>
-                    </div>
-                    
-                    <div class="workshop-footer">
-                        <span class="workshop-price free">Gratuito</span>
-                        <span class="workshop-spots">12 lugares</span>
-                    </div>
-                    <a href="#" class="workshop-button">Ver detalles</a>
-                </div> -->
-            <!-- </div> -->
-
-            <!-- Taller 2 -->
-            <!-- <div class="workshop-card"> -->
-                <!-- <div class="workshop-image">
-                    <span>🐍</span>
-                    <div class="workshop-level">Básico</div>
-                </div>
-                <div class="workshop-content">
-                    <span class="workshop-category">Programación</span>
-                    <h3 class="workshop-title">Python para Análisis de Datos</h3>
-                    <div class="workshop-instructor">
-                        <div class="instructor-avatar">LG</div>
-                        <span>Lic. Laura García</span>
-                    </div>
-                    
-                    <div class="workshop-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Inicio</span>
-                            <span class="meta-value">17 marzo</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Duración</span>
-                            <span class="meta-value">8 semanas</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Horario</span>
-                            <span class="meta-value">Mié 16-18</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Cupo</span>
-                            <span class="meta-value">20</span>
-                        </div>
-                    </div>
-                    
-                    <div class="workshop-footer">
-                        <span class="workshop-price">$200</span>
-                        <span class="workshop-spots">8 lugares</span>
-                    </div>
-                    <a href="#" class="workshop-button">Ver detalles</a>
-                </div> -->
-            <!-- </div> -->
-
-            <!-- Taller 3 -->
-            <!-- <div class="workshop-card">
-                <div class="workshop-image">
-                    <span>📊</span>
-                    <div class="workshop-level">Avanzado</div>
-                </div>
-                <div class="workshop-content">
-                    <span class="workshop-category">Estadística</span>
-                    <h3 class="workshop-title">Modelos de Regresión Avanzada</h3>
-                    <div class="workshop-instructor">
-                        <div class="instructor-avatar">MV</div>
-                        <span>Mtra. Valeria Soto</span>
-                    </div>
-                    
-                    <div class="workshop-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Inicio</span>
-                            <span class="meta-value">24 marzo</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Duración</span>
-                            <span class="meta-value">5 semanas</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Horario</span>
-                            <span class="meta-value">Jue 15-17</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Cupo</span>
-                            <span class="meta-value">15</span>
-                        </div>
-                    </div>
-                    
-                    <div class="workshop-footer">
-                        <span class="workshop-price">$350</span>
-                        <span class="workshop-spots">5 lugares</span>
-                    </div>
-                    <a href="#" class="workshop-button">Ver detalles</a>
-                </div>
-            </div>
-        </div> -->
-
+        
         <!-- Próximos talleres -->
-        <!-- <h2 style="font-size: 2rem; color: #330036; margin: 40px 0 20px;">Próximos talleres</h2>
-        
-        <div class="upcoming-list">
+         <!-- <h2 style="font-size: 2rem; color: #330036; margin: 40px 0 20px;">Próximos talleres</h2> -->
+
+        <!-- <div class="upcoming-list">
             <div class="upcoming-item">
                 <div class="upcoming-date">
                     <div class="upcoming-day">25</div>
@@ -265,8 +150,8 @@
                 </div>
                 <a href="#" class="upcoming-action">Inscribirme</a>
             </div>
-        </div>
-    </main> -->
+        </div> -->
+    <!-- </main> -->
 
     <!-- Footer -->
 <footer class="footer" id="contacto" style="margin: 0px;">
@@ -338,5 +223,10 @@
     <!-- <script src="../scripts/main.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.9/p5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Cargar la librería desde CDN -->
+<!-- <script src="https://unpkg.com/ical.js/dist/ical.min.js"></script> -->
+<!-- Versión UMD de ical.js (funciona con <script> normal) -->
+    <!-- <script src="../scripts/calendario.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.5.0/ical.min.js"></script>
 </body>
 </html>
