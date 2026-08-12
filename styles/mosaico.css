@@ -1,0 +1,125 @@
+/* CSS */
+.mosaico-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.mosaico-titulo {
+    color: #3c0035;
+    margin-bottom: 1rem;
+}
+
+.mosaico-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(80px, auto);
+    gap: 8px;
+    grid-auto-flow: dense;
+}
+
+.mosaico-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    min-height: 80px;
+}
+
+.mosaico-item:hover {
+    transform: scale(1.03);
+    z-index: 2;
+}
+
+.mosaico-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Figuras */
+.figura-1x1 { grid-column: span 1; grid-row: span 1; }
+.figura-1x2 { grid-column: span 1; grid-row: span 2; }
+.figura-2x1 { grid-column: span 2; grid-row: span 1; }
+.figura-2x2 { grid-column: span 2; grid-row: span 2; }
+.figura-3x2 { grid-column: span 3; grid-row: span 2; }
+
+.mosaico-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    padding: 10px;
+    text-align: center;
+}
+
+.mosaico-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* === MÓVIL: Grid estilo Instagram === */
+@media (max-width: 768px) {
+    .mosaico-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        gap: 4px;
+        grid-auto-flow: row;
+    }
+    
+    .mosaico-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        aspect-ratio: 1 / 1;
+        border-radius: 8px;
+        min-height: unset;
+    }
+    
+    .mosaico-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .mosaico-overlay {
+        font-size: 0.6rem;
+        padding: 8px;
+        background: rgba(0,0,0,0.5);
+        text-align: center;
+    }
+    
+    .mosaico-placeholder {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .mosaico-grid {
+        gap: 3px;
+        grid-auto-rows: minmax(80px, auto);
+    }
+    
+    .mosaico-overlay {
+        font-size: 0.5rem;
+        padding: 5px;
+    }
+    
+    .mosaico-placeholder {
+        font-size: 0.6rem;
+    }
+}
