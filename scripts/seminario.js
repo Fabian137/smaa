@@ -39,7 +39,7 @@ async function cargarSesionesSMAA() {
       tbody.appendChild(tr);
     });
     
-    // 4. (Opcional) Mostrar el semestre en algún lugar
+    // 4. Mostrar el semestre en algún lugar
     const semesterElement = document.getElementById('semester-display');
     if (semesterElement && data.semester) {
       semesterElement.textContent = `Semestre ${data.semester}`;
